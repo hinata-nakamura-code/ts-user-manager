@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var math_1 = require("./math");
+var x = 10;
+var y = 5;
+console.log((0, math_1.add)(x, y));
+console.log((0, math_1.multiply)(x, y));
+var u = { id: 1, name: 'Nakamura' };
+var role = 'admin';
+console.log(u, role);

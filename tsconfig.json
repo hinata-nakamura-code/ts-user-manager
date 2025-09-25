@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     /* 出力/入力レイアウト */
-    "rootDir": "src",
-    "outDir": "dist",
+    "rootDir": "./src",
+    "outDir": "./dist",
 
     /* モジュール＆解決方法（Nodeの最新挙動に合わせる） */
     "module": "NodeNext",
@@ -10,7 +10,7 @@
 
     /* 生成するJSのターゲット（十分に新しめ、でも互換性あり） */
     "target": "ES2020",
-    "lib": ["ES2020"],
+    "lib": ["ES2020", "DOM"],
 
     /* 型チェックの推奨セット */
     "strict": true,

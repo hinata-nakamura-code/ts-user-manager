@@ -1,0 +1,33 @@
+{
+  "root": true, // このフォルダをプロジェクトのルートにする（親の設定を引き継がない）
+  "env": { "es2022": true, "node": true, "browser": true },
+  // どこで動くコードかを指定。node環境/ブラウザ両方を対象に。
+
+  "parser": "@typescript-eslint/parser",
+  // ESLintに「TypeScriptを読めるようにする」辞書
+
+  "parserOptions": { "sourceType": "module", "ecmaVersion": "latest" },
+  // import/exportを許可し、最新の文法を理解できるようにする
+
+  "plugins": ["@typescript-eslint", "unused-imports"],
+  // TS特有のルールと、未使用importを検出するプラグインを追加
+
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/stylistic",
+    "prettier"
+  ],
+  // 既成のルール集をまとめて適用。Prettierを最後に置いて整形ルール衝突を回避。
+
+  "rules": {
+    "unused-imports/no-unused-imports": "error",
+    // 未使用importはエラーに（不要なコードを残さない）
+
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ]
+    // 未使用変数は警告に。ただし「_」始まりは許容（慣習）
+  }
+}
